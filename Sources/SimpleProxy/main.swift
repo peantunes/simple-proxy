@@ -163,6 +163,7 @@ final class ClientResponseHandler: ChannelInboundHandler, Sendable {
     }
 }
 
+CertificateManager.shared.ensureCertificateExists()
 let group = MultiThreadedEventLoopGroup(numberOfThreads: System.coreCount)
 
 let bootstrap = ServerBootstrap(group: group)

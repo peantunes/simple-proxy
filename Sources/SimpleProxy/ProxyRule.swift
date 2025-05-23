@@ -24,7 +24,8 @@ class RulesManager {
     func loadRules() {
         rules.removeAll()
 
-        let mocksFolder = "/path/to/Mocks" // TODO: Adjust your folder path
+        // Path to folder containing JSON mocks; default is "./Mocks" relative to the working directory.
+        let mocksFolder = FileManager.default.currentDirectoryPath + "/Mocks"
 
         guard let contents = try? FileManager.default.contentsOfDirectory(atPath: mocksFolder) else {
             print("Failed to read mocks folder.")
